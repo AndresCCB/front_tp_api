@@ -24,7 +24,7 @@ function FormularioRegistro(){
 
     return(
         <div>
-        <h1>Login</h1>
+        <h1>Registrarse</h1>
         <form onSubmit={handleButton}>
             <div>
                 <label>Documento: </label>

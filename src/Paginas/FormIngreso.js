@@ -20,7 +20,7 @@ function FormularioIngreso() {
     const handleIngreso = (e) => {
         e.preventDefault();
         alert(formData.usuario);
-        //navigate('/FormIngresoUsuario');
+        navigate('/PantallaInicio');
     }
 
     const handleRegistrarse = (e) => {

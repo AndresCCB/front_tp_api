@@ -1,0 +1,92 @@
+/*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+:root{ 
+  /* paleta de colores a usar */
+  --negro: #000000;
+  --blanco: #ffffff;
+  --purpura:  #4F3859;
+  --purpuraOscuro: #392840;
+  --morado: #402759;
+  --amarillo: #BFB093;
+  --beige: #A6A09C;
+}
+
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login {
+  margin-top: 15%;
+  margin-bottom: 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+  
+.login-header {
+  background: var(--morado);
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+  
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+  
+.login input[type="text"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+  
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+  
+.login button[type="submit"],
+.register {
+  background: var(--morado);
+  border-color: transparent;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 15px;
+  display: inline-block;
+  margin-right: 8px;
+}
+  
+.login button[type="submit"]:hover,
+.register:hover {
+  background: var(--beige);
+}
+  
+.login button[type="submit"]:focus,
+.register:focus {
+  border-color: var(--negro);
+}

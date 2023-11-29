@@ -1,27 +1,29 @@
 import React, { useState } from "react";
+import { useAuth } from '../authContext';
 import { useNavigate } from 'react-router-dom';
+import EstiloPantallaInicio from '../Estilos/EstiloInicioAdmin.css';
 
 function PantallaInicio() {
+    const {currentUser} = useAuth();
     const navigate = useNavigate();
-
-    const handleHacerReclamo = (e) => {
-        e.preventDefault();
-        navigate('/FormReclamo');
-    }
 
     const handleBuscarReclamo = (e) => {
         e.preventDefault();
-        navigate('/PantallaConsultaReclamo');
+        navigate('/PantallaGestionarReclamos', { state: { isAdmin: false } });
     }
 
+    const handleAgregarImagen = (e) => {
+        e.preventDefault();
+        navigate('/FormAgregarImagen');
+    }
+      
+
     return(
-        <div>
-            <h1>Bienvenido XXXXXXX</h1>
-            <div>
-                <button onClick={handleHacerReclamo}>Hacer Reclamo</button>
-            </div>
-            <div>
-                <button onClick={handleBuscarReclamo}>Buscar Reclamo</button>
+        <div className="menu">
+            <h1 className="menu-header">Bienvenido {currentUser.nombre}</h1>
+            <div className="menu-container">
+                <button onClick={handleBuscarReclamo}>Reclamos</button>
+                
             </div>
         </div>
     )

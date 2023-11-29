@@ -1,10 +1,12 @@
 import React, {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
-function FormularioRegistro(){
+function FormularioRegistroUsuario(){
 
+    const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         documento: '',
-        nombre: '',
         usuario: '',
         password: ''
     });
@@ -20,6 +22,21 @@ function FormularioRegistro(){
     const handleButton = (e) => {
         e.preventDefault();
         alert(formData.usuario);
+        try{
+            fetch(`http://localhost:8080/personas/registrarUsuario?documento=${formData.documento}&mail=${formData.usuario}&password=${formData.password}`, {
+                method: 'PUT'
+            }).then(response => {
+                if(response.ok){
+                    alert('Usuario Registrado');
+                    navigate('/PantallaIngreso');
+                }else{
+                    alert('Error al registrar usuario');
+                }
+            });
+        }
+        catch(error){
+            alert(error);
+        }
     }
 
     return(
@@ -31,23 +48,15 @@ function FormularioRegistro(){
                 <input type='text'
                        id='documento' 
                        name='documento'
-                       value={formData.usuario}
+                       value={formData.documento}
                        onChange={handleInputChange}/>
             </div>
             <div>
-                <label>Nombre: </label>
-                <input type='text' 
-                       id='nombre'
-                       name='nombre'
-                       value={formData.nombre} 
-                       onChange={handleInputChange}/>
-            </div>
-            <div>
-                <label>Email: </label>
+                <label>Usuario (Email): </label>
                 <input type='text' 
                        id='usuario'
                        name='usuario'
-                       value={formData.password} 
+                       value={formData.usuario} 
                        onChange={handleInputChange}/>
             </div>
             <div>
@@ -64,4 +73,4 @@ function FormularioRegistro(){
     )
 }
 
-export default FormularioRegistro;
+export default FormularioRegistroUsuario;

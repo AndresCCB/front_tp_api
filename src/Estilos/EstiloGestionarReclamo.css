@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --negro: #000000;
+    --blanco: #ffffff;
+    --purpura:  #4F3859;
+    --purpuraOscuro: #392840;
+    --morado: #402759;
+    --amarillo: #BFB093;
+    --beige: #A6A09C;
+}
+  
+.gestion-reclamo {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+  
+.gestion-reclamo-header,
+.gestion-reclamo {
+    margin-top: 3%;
+    margin-bottom: 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+    
+.gestion-reclamo-header {
+    background: var(--morado);
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+    
+.gestion-reclamo-container {
+    background: #ebebeb;
+    padding: 12px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+ 
+.gestion-reclamo ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.gestion-reclamo li {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+  
+.gestion-reclamo li:hover {
+    background-color: #f6f6f6;
+}
+  
+.gestion-reclamo-detail {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ReactModal__Content {
+    width: 30%;
+    height: 60%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(0%);
+}
